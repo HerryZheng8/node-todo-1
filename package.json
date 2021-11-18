@@ -1,9 +1,19 @@
 {
   "name": "node-todo-1",
+  "bin": {
+    "t": "cli.js"
+  },
   "version": "0.0.1",
   "main": "cli.js",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
-    "commander": "^3.0.2"
+    "commander": "^3.0.2",
+    "inquirer": "^7.0.0"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
   }
 }
