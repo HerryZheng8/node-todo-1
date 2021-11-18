@@ -1,9 +1,12 @@
+jest.mock('fs');
 const db = require('../db.js')
+const fs = require('fs');
 
-describe('db',()=>{
-    it('can read',()=>{
-        expect((db.read))
+describe('db', () => {
+    it('can read', async () => {
+        const data = [{title:'hi',done:true}]
+        fs.setMock('/xxx',null,JSON.stringify(data))
+        const list=await db.read('/xxx')
+        expect(list).toStrictEqual(data)
     })
-    it('can write',()=>{})
-
 })
